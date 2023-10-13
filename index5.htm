@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante</title>
+</head>
+<body>
+    <script>
+        // Definición del constructor 
+        function Restaurante(plato, cantidad, precio) {
+          this.plato = plato;
+          this.cantidad = cantidad;
+          this.precio = precio;
+        }
+
+        // Definición del método pedido Restaurante 
+        Restaurante.prototype.pedidoRestaurante = function() {
+          return `Pedido: ${this.cantidad} ${this.plato}`;
+        };
+
+        // Definición del método valor Pedido 
+        Restaurante.prototype.valorPedido = function() {
+          return `Valor del pedido de ${this.cantidad} ${this.plato}: $${this.cantidad * this.precio}`;
+        };
+
+        // Definición del método descuent oPedido 
+        Restaurante.prototype.descuentoPedido = function() {
+          if (this.cantidad > 1 && (this.cantidad * this.precio) >= 50000) {
+            const descuento = (this.cantidad * this.precio) * 0.1;
+            return `Descuento del 10% aplicado: -$${descuento}`;
+          } else {
+            return "No es valido el descuento para este pedido.";
+          }
+        };
+
+        // Instanciación de tres objetos 
+        const pedido1 = new Restaurante("hamburguesa", 4, 8000);
+        const pedido2 = new Restaurante("tacos", 5, 12000);
+        const pedido3 = new Restaurante("salchipapa", 1, 4000);
+
+        // Ejecución de métodos 
+        console.log(pedido1.pedidoRestaurante());
+        console.log(pedido1.valorPedido());
+        console.log(pedido1.descuentoPedido());
+
+        console.log(pedido2.pedidoRestaurante());
+        console.log(pedido2.valorPedido());
+        console.log(pedido2.descuentoPedido());
+
+        console.log(pedido3.pedidoRestaurante());
+        console.log(pedido3.valorPedido());
+        console.log(pedido3.descuentoPedido());
+    </script>
+</body>
+</html>

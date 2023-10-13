@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automóviles</title>
+</head>
+<body>
+
+    <script>
+       /*El codigp define una clase llamada "Automovil " con unas propiedades 
+        Definición del constructor 
+       */
+function Automovil(marca, linea, modelo, cilindraje, precio,numpasajeros,typebox) {
+  this.marca = marca;
+  this.linea = linea;
+  this.modelo = modelo;
+  this.cilindraje = cilindraje;
+  this.precio = precio;
+  this.numpasajeros = numpasajeros;
+  this.typebox = typebox;
+}
+
+// devuelve una cadena con la información del vehículo.
+Automovil.prototype.informacionVehiculo = function() {
+  return( `Marca: ${this.marca}, Línea: ${this.linea}, Modelo: ${this.modelo}, Cilindraje: ${this.cilindraje}, Precio: $${this.precio}`)
+};
+
+// devuelve una cadena que indica si el vehículo requiere revisión técnico-mecánica.
+Automovil.prototype.revisionTecnicoMecanica = function() {
+  const antiguedad = new Date().getFullYear() - this.modelo;
+  if (antiguedad > 5) {
+    return `Se requiere revisión técnica ${this.modelo}`;
+  } else {
+    return `El modelo ${this.modelo} no necesita revisión técnica`;
+  } 
+};
+
+// devuelve una cadena con el nivel de gasolina del vehículo.
+Automovil.prototype.nivelGasolina = function() {
+  const nivel = Math.floor(Math.random() * 100) + 1;
+  return `Nivel esta de gasolina: ${nivel}%`;
+};
+
+//devuelve una cadena que indica si el número de cinturones de seguridad es menor que el número de pasajeros.
+numeroCinturonesSeguridad.prototype = function(){
+  const cinturonesdeseguridad = new Automovil ('')
+  if (cinturonesdeseguridad < numeropasajeros) {
+    return `el numero de ocupacion de los pasajeros ${this.modelo}` + `esta en exceso`;
+  }else{
+    return `Aun no se ha excedido la cantidad máxima de pasajeros`
+  }
+
+};
+//devuelve una cadena con el tipo de caja del vehículo.
+Automovil.prototype.typebox = function(){
+  const typebox = new Automovil().typebox
+
+};
+
+
+
+
+
+
+
+// Instanciación 
+const auto1 = new Automovil("Toyota", "Corolla", 2020, 2000, 25000);
+const auto2 = new Automovil("Chevrolet", "Civic", 2019, 1900, 33000);
+const auto3 = new Automovil("chana", "benni", 2022, 1600, 27000);
+
+// Instanciación de tres objetos de Automóvil
+const autosedan = new Automovil("sedan", );
+const numeropasajeros = new Automovil("numero pasajeros")
+const typebox = new Automovil("tipo de caja Caja de cambios manual,Caja de cambios de doble embrague o semiautomáticas,Caja de cambios automática,")
+
+Object.assign(Automovil.prototype,numeroCinturonesSeguridad.prototype);
+
+
+
+
+console.log(auto1.informacionVehiculo());
+console.log(auto1.revisionTecnicoMecanica());
+console.log(auto1.nivelGasolina());
+
+console.log(auto2.informacionVehiculo());
+console.log(auto2.revisionTecnicoMecanica());
+console.log(auto2.nivelGasolina());
+
+console.log(auto3.informacionVehiculo());
+console.log(auto3.revisionTecnicoMecanica());
+console.log(auto3.nivelGasolina());
+
+console.log(autosedan.typebox());
+console.log(autosedan.numpasajeros());
+console.log(numeroCinturonesSeguridad());
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

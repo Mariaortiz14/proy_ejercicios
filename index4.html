@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructores</title>
+</head>
+<body>
+    <script>
+        // Definir metodo constructor
+        function Instructor(nombre, linea, jornada) {
+          this.nombre = nombre;
+          this.linea = linea;
+          this.jornada = jornada;
+        }
+
+        // método informacionInstructor 
+        Instructor.prototype.informacionInstructor = function() {
+          return `Nombre: ${this.nombre}, Línea: ${this.linea}, Jornada: ${this.jornada}`;
+        };
+
+        // Definición del método programaFormacion 
+        Instructor.prototype.programaFormacion = function() {
+          if (this.linea === "Software") {
+            return "Programa de Formación: ADSO";
+          } else if (this.linea === "Hardware") {
+            return "Programa de Formación: Administración de Redes";
+          } else {
+            return "No se encuentra esta linea tecnologíca";
+          }
+        };
+
+        // Instanciación  
+        const instructor1 = new Instructor("Mar perez", "Software", "Tarde");
+        const instructor2 = new Instructor("Valentina mor", "Hardware", "mañana");
+        const instructor3 = new Instructor("Eliana Morales", "Electrónica", "Noche");
+
+        // Métodos para mostrar los datos en la  consola
+        console.log(" Instructor1:");
+        console.log(instructor1.informacionInstructor());
+        console.log(instructor1.programaFormacion());
+
+        console.log(" Instructor2:");
+        console.log(instructor2.informacionInstructor());
+        console.log(instructor2.programaFormacion());
+
+        console.log(" Instructor3:");
+        console.log(instructor3.informacionInstructor());
+        console.log(instructor3.programaFormacion());
+    </script>
+</body>
+</html>
