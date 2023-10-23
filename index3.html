@@ -11,14 +11,14 @@
        /*El codigp define una clase llamada "Automovil " con unas propiedades 
         Definición del constructor 
        */
-function Automovil(marca, linea, modelo, cilindraje, precio,numpasajeros,typebox) {
+function Automovil(marca, linea, modelo, cilindraje, precio,numpasajeros) {
   this.marca = marca;
   this.linea = linea;
   this.modelo = modelo;
   this.cilindraje = cilindraje;
   this.precio = precio;
   this.numpasajeros = numpasajeros;
-  this.typebox = typebox;
+  
 }
 
 // devuelve una cadena con la información del vehículo.
@@ -43,19 +43,19 @@ Automovil.prototype.nivelGasolina = function() {
 };
 
 //devuelve una cadena que indica si el número de cinturones de seguridad es menor que el número de pasajeros.
-numeroCinturonesSeguridad.prototype = function(){
-  const cinturonesdeseguridad = new Automovil ('')
-  if (cinturonesdeseguridad < numeropasajeros) {
-    return `el numero de ocupacion de los pasajeros ${this.modelo}` + `esta en exceso`;
-  }else{
-    return `Aun no se ha excedido la cantidad máxima de pasajeros`
-  }
-
+const numeroCinturonesSeguridad = {
+ numpasajeros: function() {
+    const numeropasajeros = new Automovil('')
+    if (numeropasajeros < this.numcinturonesdeseguridad) {
+      return `el numero de ocupacion de los pasajeros ${this.modelo}` + `esta en exceso`;
+    } else {
+      return `Aun no se ha excedido la cantidad máxima de pasajeros`
+    }
+ }
 };
 //devuelve una cadena con el tipo de caja del vehículo.
 Automovil.prototype.typebox = function(){
-  const typebox = new Automovil().typebox
-
+  
 };
 
 
@@ -69,12 +69,15 @@ const auto1 = new Automovil("Toyota", "Corolla", 2020, 2000, 25000);
 const auto2 = new Automovil("Chevrolet", "Civic", 2019, 1900, 33000);
 const auto3 = new Automovil("chana", "benni", 2022, 1600, 27000);
 
+auto1.typebox();
+auto2.typebox();
+auto3.typebox();
 // Instanciación de tres objetos de Automóvil
 const autosedan = new Automovil("sedan", );
 const numeropasajeros = new Automovil("numero pasajeros")
 const typebox = new Automovil("tipo de caja Caja de cambios manual,Caja de cambios de doble embrague o semiautomáticas,Caja de cambios automática,")
 
-Object.assign(Automovil.prototype,numeroCinturonesSeguridad.prototype);
+Object.assign(Automovil.prototype, numeroCinturonesSeguridad);
 
 
 
